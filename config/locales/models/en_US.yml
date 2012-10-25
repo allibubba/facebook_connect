@@ -1,0 +1,34 @@
+en_US:
+  #social approved
+  social_approved_message: "when posting to user wall"
+  social_approved_description: "when posting to user wall"
+  social_approved_name: "when posting to user wall"
+  
+  activemodel:
+    attributes:
+      locale:
+        en_US: "United States"
+        en_GB: "Great Britan"
+        fr_FR: "France"
+        en_IN: "India"
+  activerecord:
+    models:
+      user: User
+      video: Video
+    attributes:
+      user:
+        name_first: "First Name"
+        name_last: "Last Name"
+        email: "Email"
+        fbid: "Facebook ID"
+    errors:
+      models:
+        video:
+          attributes:
+            youtube_url:
+              blank: "you must specify a youtube URL."
+      template:
+        header:
+          one:   "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+        body:    "There were problems with the following fields:"
