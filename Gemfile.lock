@@ -157,6 +157,7 @@ DEPENDENCIES
   mysql2
   oauth2
   rails (= 3.2.8)
+  rdoc
   sass-rails (~> 3.2.3)
   seed_dump
   therubyracer

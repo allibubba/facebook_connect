@@ -4,9 +4,9 @@ function Notification(message){
 
 Notification.prototype.display = function() {
   // create element and inject
-  this.display = document.createElement('div');
-  this.display.className = 'notification-bar'
+  this._display = document.createElement('div');
+  this._display.className = 'notification-bar'
   msg = document.createTextNode(this._message);
-  this.display.appendChild(msg)
-  document.body.appendChild(this.display);
+  this._display.appendChild(msg)
+  document.body.appendChild(this._display);
 };

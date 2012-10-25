@@ -1,15 +1,19 @@
+##
+# interact with facebook
+
 class OauthController < ApplicationController
   
+  ##
+  # exchanges facebook token for extended token
+  # creates new user or updates user with new token
+
   def callback
 
     access_token = params[:accessToken]
     auth = FbGraph::Auth.new(CLIENT_ID, CLIENT_SECRET)
-    # exchange for extended token
     auth.exchange_token! access_token
     auth.access_token
     fbuser = FbGraph::User.me(auth.access_token).fetch
-
-    # new user? create one
     if User.find_by_fbid(params[:userID]).nil?
       user = User.create(
         :fbid      => fbuser.identifier,
@@ -24,10 +28,8 @@ class OauthController < ApplicationController
       user.save
     end
     
-    # update session, you're probably gonna need it
     session[:user_id] = fbuser.identifier
     
-    # return user data as json response    
     render :json => user.to_json(:only => [:fbid, :name_first, :name_last])
   end
 

@@ -24,7 +24,7 @@ gem 'attr_encrypted'
 
 group :development do
   gem 'thin'
-  #gem 'sqlite3'
+  gem 'rdoc'
   gem 'seed_dump'
 end
 
