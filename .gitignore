@@ -18,3 +18,4 @@ pickle-email-*.html
 /config/environments/staging.rb
 /config/environments/production.rb
 /doc/*
+/config/secrets.yml

@@ -10,7 +10,10 @@ class OauthController < ApplicationController
   def callback
 
     access_token = params[:accessToken]
-    auth = FbGraph::Auth.new(CLIENT_ID, CLIENT_SECRET)
+    auth = FbGraph::Auth.new(
+      Rails.application.secrets.facebook['app_id'],
+      Rails.application.secrets.facebook['app_secret']
+    )
     auth.exchange_token! access_token
     auth.access_token
     fbuser = FbGraph::User.me(auth.access_token).fetch

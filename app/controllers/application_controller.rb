@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     def authenticate
       if Rails.env == 'staging' && !is_facebook?(request.remote_ip)
         authenticate_or_request_with_http_basic do |username, password|
-          username == "roundhouse" && password == "do not use"
+          username == "bob" && password == "do not use"
         end
       end  
     end
