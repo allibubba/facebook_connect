@@ -3,11 +3,12 @@ class ApplicationController < ActionController::Base
   require 'pp'
 
   layout 'application'
-
   before_filter :set_locale, :authenticate
 
+  I18n.config.enforce_available_locales = false
   def set_locale
     I18n.locale = session[:locale] || params[:locale] || I18n.default_locale
+    # I18n.locale = :en
   end
 
 

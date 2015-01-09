@@ -4,12 +4,6 @@
   <%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tags %>
-  <meta property="og:title" content="<%= t :facebook_title %>" />
-  <meta property="og:image" content="<%=BASE_URL%>/appImage.jpeg" />
-  <meta property="og:url" content="<%=BASE_URL%>" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="<%= t :facebook_title %>"/>
-  <meta property="og:description" content="<%= t :facebook_description %> <%= t :facebook_caption %>" />
 
 </head>
 <body>
@@ -22,7 +16,7 @@
 <div id="fb-root"></div>
 
 <script>
-  var CLIENT_ID = <%=CLIENT_ID%>;
+  var CLIENT_ID = ""
   (function(d){
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
      if (d.getElementById(id)) {return;}
